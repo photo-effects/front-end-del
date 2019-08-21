@@ -7,9 +7,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // axios.get("https://swapi.co/api/people")
-    axios.get("")
-    .then(res => this.setState({testData: res.data.results}))
+    axios.get("https://photo-effect-backend.herokuapp.com/api/users")
+    .then(res => this.setState({testData: res.data}))
     .catch(err => console.log(err))
   }
 
@@ -18,12 +17,17 @@ class App extends Component {
       <div>
         <h1>Photo Effects</h1>
         {this.state.testData.map(data => {
-          return <div>{data.name}</div>
+          return (
+            <>
+              <div>{data.id}</div>
+              <div>{data.username}</div>
+              <div>{data.password}</div>
+            </>
+          )
         })}
       </div>
     );
   }
-    
 }
 
 export default App;
