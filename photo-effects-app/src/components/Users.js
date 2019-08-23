@@ -7,7 +7,7 @@ class Users extends Component {
    }
 
    componentDidMount() {
-      axios.get("https://photo-effect-backend.herokuapp.com/api/users")
+      axios.get("https://photo-effects-backend.herokuapp.com/api/users")
       .then(res => this.setState({testUsers: res.data}))
       .catch(err => console.log(err))
     }
